@@ -7,6 +7,10 @@
 - The greater the current, the greater the speed of the motor
 - Reversing current direction reverses direction of rotation
 
+<p align="center">
+  <img src="images/h-bridge-diagram.png" width="700">
+</p>
+
 ## How Does The H-Bridge Work?
 
 - H-Bridge driver lets you reverse the rotation of the motor through the use of switches
@@ -26,7 +30,9 @@
     - For the N-channel MOSFET, the gate voltage has to be at least 5V higher than the voltage at the MOSFET pins for it to conduct properly and since the gates 1 and 3 are already connected to a 5V supply, that would be the gate voltage would have to be at least 10V which is more difficult to achieve with an MCU
     - P-channel MOSFETs require the gate voltage to be at least 5V lower than the voltage at the pins to conduct properly, so they are used at the top as generating a 5V signal is much easier than 10V as another circuit would need to be used for a 10V signal (since the MCU can only output 5V)
 
-[IMAGE: H-bridge circuit]
+<p align="center">
+  <img src="images/h-bridge-circuit.png" width="700">
+</p>
 
 ## Building the Circuit
 
@@ -42,7 +48,13 @@
   - The current will follow the outlined path, allowing for the inductive energy to dissipate safely
 - When Q2 and Q3 are shut off, the same thing that occurred with D2 and D3 occurs with D1 and D4 instead and the flow of the current is shown below
 
-[IMAGE: H-bridge flyback diode current path]
+<p align="center">
+  <img src="images/h-bridge-flyback-diode-current-path-1.png" width="700">
+</p>
+
+<p align="center">
+  <img src="images/h-bridge-flyback-diode-current-path-2.png" width="700">
+</p>
 
 ## H-Bridge and Microcontrollers
 
@@ -64,14 +76,26 @@
 
 - This is the first simulation I did where I tried to keep 2 and 3 open and close 1 and 4, I don't think this worked how I wanted it to, but am unsure as to what I did wrong.
 
-[IMAGE: H-bridge first Multisim simulation]
+<p align="center">
+  <img src="images/h-bridge-first-multisim-simulation-1.png" width="700">
+</p>
+
+<p align="center">
+  <img src="images/h-bridge-first-multisim-simulation-2.png" width="700">
+</p>
 
 ### Second Simulation
 
 - This is the second simulation and why I believe I did it wrong, because it looks the exact same as the first one even though I tried to make 1 and 4 open and close 2 and 3 with this one.
 - If anyone knows why this is wrong, can they tell me?
 
-[IMAGE: H-bridge second Multisim simulation]
+<p align="center">
+  <img src="images/h-bridge-second-multisim-simulation-1.png" width="700">
+</p>
+
+<p align="center">
+  <img src="images/h-bridge-second-multisim-simulation-2.png" width="700">
+</p>
 
 ## H-Bridge Breadboard
 
@@ -80,16 +104,22 @@
 - We also noticed that the speed of the motor was slower when rotating counterclockwise
 - The breadboard is shown below:
 
-[IMAGE: H-bridge breadboard]
+<p align="center">
+  <img src="images/h-bridge-breadboard.png" width="700">
+</p>
 
 ## H-Bridge PCB
 
 - This PCB layout was made in Fusion
 - When designing a PCB layout, the most important thing is keeping the components as close together as possible to reduce the amount of noise as longer transmission lines result in a greater likelihood of stronger noise to interfere with the signal that we are trying to output and receive as well. Therefore, this PCB has all the components as close together as possible.
 
-[IMAGE: H-bridge PCB layout]
+<p align="center">
+  <img src="images/h-bridge-pcb-layout.png" width="700">
+</p>
 
 - The 3D layout from Fusion is also attached below.
   - For some reason, the motor is just floating above the PCB but that probably has something to do with the model Fusion uses
 
-[IMAGE: H-bridge PCB 3D layout]
+<p align="center">
+  <img src="images/h-bridge-pcb-3d-layout.png" width="700">
+</p>
