@@ -13,7 +13,7 @@
 - When two (or more) resistors are connected together across a DC supply voltage, each resistor will have different voltage values
 - Resistive Voltage Divider:
 
-[(docs/images/Resistive voltage divider.png)]
+![Resistive voltage divider](docs/images/resistive-voltage-divider.png)
 
 ### Resistive Voltage Divider Transfer Function
 
