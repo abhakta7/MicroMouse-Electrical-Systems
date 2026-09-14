@@ -13,7 +13,9 @@
 - When two (or more) resistors are connected together across a DC supply voltage, each resistor will have different voltage values
 - Resistive Voltage Divider:
 
-![Resistive voltage divider](docs/images/resistive-voltage-divider.png)
+<p align="center">
+  <img src="images/resistive-voltage-divider.png" width="700">
+</p>
 
 ### Resistive Voltage Divider Transfer Function
 
@@ -49,7 +51,9 @@ $$\Large f_c = \frac{1}{2\pi RC}$$
 - The RC filter part of the circuit responds the same as before
 - The op-amp is configured as a non-inverting amplifier which allows for a voltage gain of the ratio between R1 and R2
 
-[IMAGE: Active high-pass filter schematic]
+<p align="center">
+  <img src="images/active-high-pass-filter-schematic.png" width="700">
+</p>
 
 - Cut-off frequency equation:
 
@@ -61,7 +65,9 @@ $$\Large A_v = 1 + \frac{R_1}{R_2}$$
 - The input and output impedances of the two RC stages should not affect each other's operation (non-interacting)
 - High Pass Filter Circuit
 
-[IMAGE: Second-order RC high-pass filter circuit]
+<p align="center">
+  <img src="images/second-order-rc-high-pass-filter-circuit.png" width="700">
+</p>
 
 - Cascading one RC filter stage with another does not work very well as each subsequent stage loads the previous one, thus causing the cut-off frequency to move away from the desired frequency
 
@@ -87,7 +93,9 @@ $$\Large A_v = 1 + \frac{R_1}{R_2}$$
 
 ## Sallen-key High Pass Filter
 
-[IMAGE: Sallen-key high-pass filter schematic]
+<p align="center">
+  <img src="images/sallen-key-high-pass-filter-schematic.png" width="700">
+</p>
 
 - The resistor RA is no longer grounded, but instead provides positive feedback for the amplifier
 - At low frequencies, the capacitors act as open circuits and at high frequencies they act as short circuits
@@ -106,7 +114,9 @@ $$\Large Q = \frac{1}{3 - A}$$
 
 ## Sallen-key Filter Response
 
-[IMAGE: Sallen-key filter response graph]
+<p align="center">
+  <img src="images/sallen-key-filter-response-graph.png" width="700">
+</p>
 
 - We can see that the greater the value of Q the more distinct the frequency can be
 - The lower the value of Q the more stable
@@ -127,11 +137,15 @@ $$\Large A = \frac{3Q - 1}{Q} = \frac{V_{OUT}}{V_{IN}} = 1 + \frac{R_1}{R_2}$$
 
 ### Fusion Schematic
 
-[IMAGE: Fusion Schematic]
+<p align="center">
+  <img src="images/fusion-schematic.png" width="700">
+</p>
 
 ### Fusion Simulation
 
-[IMAGE: Fusion Simulation]
+<p align="center">
+  <img src="images/fusion-simulation.png" width="700">
+</p>
 
 - It can be seen that the output signal did increase slightly as a result of the Salen-key filter as the AC frequency is close to the cut-off frequency
 - This could be better seen if I used a higher frequency AC source (adjusting the filter design to compensate) and if I calculated an appropriate voltage gain for a specific value of Q, such as Q equals 3
@@ -140,7 +154,9 @@ $$\Large A = \frac{3Q - 1}{Q} = \frac{V_{OUT}}{V_{IN}} = 1 + \frac{R_1}{R_2}$$
 
 - I created a Fusion schematic to practice creating PCBs and how to effectively map traces on a PCB
 
-[IMAGE: Sallen-Key PCB schematic]
+<p align="center">
+  <img src="images/sallen-key-pcb-schematic.png" width="700">
+</p>
 
 - The layout is very basic as it was my first one, but I followed the rules of PCB design; keep the traces short and components close together
 - I believe this PCB was made using a dual op-amp IC
