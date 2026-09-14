@@ -1,6 +1,6 @@
-# Sallen and Key Filter
+# Sallen-Key Filter
 
-## What is a Sallen and Key Filter?
+## What is a Sallen-Key Filter?
 
 - Is a second order active filter design based around a single non-inverting op-amp and two resistors
 - Creates a voltage-controlled voltage-source (VCVS) with filter characteristics of high input impedance, low output impedance and good stability
@@ -13,13 +13,17 @@
 - When two (or more) resistors are connected together across a DC supply voltage, each resistor will have different voltage values
 - Resistive Voltage Divider:
 
-[IMAGE: Resistive voltage divider]
+[Resistive voltage divider.png]
 
 ### Resistive Voltage Divider Transfer Function
 
 - The transfer function shows how an output voltage will change based on the input voltage and resistance of each resistor
-- [Av = VOUT/VIN = R2/(R1+R2)]
-- Thus: VOUT = [VIN R2/(R1+R2)]
+
+$$\Large A_v = \frac{V_{OUT}}{V_{IN}} = \frac{R_2}{R_1 + R_2}$$
+
+- Thus:
+
+$$\Large V_{OUT} = V_{IN} \frac{R_2}{R_1 + R_2}$$
 
 ## RC Voltage Divider
 
@@ -30,14 +34,15 @@
 
 Voltage divider transfer function:
 
-[IMAGE: RC voltage divider and transfer function]
+$$\Large A = \frac{V_{OUT}}{V_{IN}} = \frac{R}{R + X_C}$$
 
 ## RC Filter Circuit
 
 - At low frequencies, the voltage gain is extremely low as the input signal is blocked by the reactance of the capacitor
 - At high frequencies, the voltage gain is high as the reactance causes the capacitor to act as a short circuit
 - Cut-off frequency defines where the circuit changes from blocking frequencies to allowing frequencies to pass through
-- [fc = 1/(2πRC)]
+
+$$\Large f_c = \frac{1}{2\pi RC}$$
 
 ## Active High Pass Filter
 
@@ -48,9 +53,7 @@ Voltage divider transfer function:
 
 - Cut-off frequency equation:
 
-[IMAGE: Active high-pass filter cut-off frequency equation]
-
-- [Av = 1 + R1/R2]
+$$\Large A_v = 1 + \frac{R_1}{R_2}$$
 
 ## Second-order RC Filter
 
@@ -93,13 +96,13 @@ Voltage divider transfer function:
 
 ### Sallen-key Cut-off Frequency Equation
 
-[IMAGE: Sallen-key cut-off frequency equation]
+$$\Large f_c = \frac{1}{2\pi\sqrt{R_1 R_2 C_1 C_2}}$$
 
 ### Magnification Factor
 
 The magnification factor is calculated with this equation:
 
-[IMAGE: Magnification factor equation]
+$$\Large Q = \frac{1}{3 - A}$$
 
 ## Sallen-key Filter Response
 
@@ -109,9 +112,10 @@ The magnification factor is calculated with this equation:
 - The lower the value of Q the more stable
 - The higher the value, the more unstable
 - A negative Q value would lead to oscillations
-- If you want to set the value of A (voltage gain), you can use these two equations:
-  - [A = (3Q - 1)/Q]
-  - [A = VOUT/VIN = 1 + R1/R2]
+- If you want to set the value of A (voltage gain), you can use this equation:
+
+$$\Large A = \frac{3Q - 1}{Q} = \frac{V_{OUT}}{V_{IN}} = 1 + \frac{R_1}{R_2}$$
+
 - Using these equations, you can find the value of resistors you want to implement
 
 ## Sallen-Key Fusion Simulation
@@ -139,7 +143,4 @@ The magnification factor is calculated with this equation:
 [IMAGE: Sallen-Key PCB schematic]
 
 - The layout is very basic as it was my first one, but I followed the rules of PCB design; keep the traces short and components close together
-
-[IMAGE: Sallen-Key PCB layout]
-
 - I believe this PCB was made using a dual op-amp IC
